@@ -1,138 +1,83 @@
-// **************************************************************************
-// AutoRouteGenerator
-// **************************************************************************
-
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
-// AutoRouteGenerator
+// AutoRouterGenerator
 // **************************************************************************
-//
+
 // ignore_for_file: type=lint
+// coverage:ignore-file
 
 part of 'router.dart';
 
-class _$AppRouter extends RootStackRouter {
-  _$AppRouter([GlobalKey<NavigatorState>? navigatorKey]) : super(navigatorKey);
+abstract class _$AppRouter extends RootStackRouter {
+  // ignore: unused_element
+  _$AppRouter({super.navigatorKey});
 
   @override
   final Map<String, PageFactory> pagesMap = {
-    LoginRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const LoginPage(),
-      );
-    },
-    HomeRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const HomePage(),
-      );
-    },
-    ControlsRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const ControlsPage(),
-      );
-    },
     DashboardRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const DashboardPage(),
       );
     },
-    TasksRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
+    HomeRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const TasksPage(),
+        child: const HomePage(),
       );
     },
-    EmptyRouterRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
+    LoginRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const EmptyRouterPage(),
+        child: const LoginPage(),
+      );
+    },
+    ControlsRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ControlsPage(),
+      );
+    },
+    EmptyRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const EmptyPage(),
+      );
+    },
+    ProfileRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ProfilePage(),
       );
     },
     SettingsRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const SettingsPage(),
       );
     },
-    ProfileRoute.name: (routeData) {
-      return CustomPage<dynamic>(
+    TasksRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const ProfilePage(),
-        fullscreenDialog: true,
-        transitionsBuilder: TransitionsBuilders.zoomIn,
-        opaque: true,
-        barrierDismissible: false,
+        child: const TasksPage(),
       );
     },
   };
-
-  @override
-  List<RouteConfig> get routes => [
-        RouteConfig(
-          LoginRoute.name,
-          path: 'login',
-        ),
-        RouteConfig(
-          HomeRoute.name,
-          path: '/',
-          children: [
-            RouteConfig(
-              DashboardRoute.name,
-              path: 'dashboard',
-              parent: HomeRoute.name,
-            ),
-            RouteConfig(
-              TasksRoute.name,
-              path: 'tasks',
-              parent: HomeRoute.name,
-            ),
-            RouteConfig(
-              EmptyRouterRoute.name,
-              path: 'settings',
-              parent: HomeRoute.name,
-              children: [
-                RouteConfig(
-                  SettingsRoute.name,
-                  path: '',
-                  parent: EmptyRouterRoute.name,
-                ),
-                RouteConfig(
-                  ProfileRoute.name,
-                  path: 'profile-page',
-                  parent: EmptyRouterRoute.name,
-                ),
-              ],
-            ),
-          ],
-        ),
-        RouteConfig(
-          ControlsRoute.name,
-          path: 'controls',
-        ),
-        RouteConfig(
-          '*#redirect',
-          path: '*',
-          redirectTo: '/',
-          fullMatch: true,
-        ),
-      ];
 }
 
 /// generated route for
-/// [LoginPage]
-class LoginRoute extends PageRouteInfo<void> {
-  const LoginRoute()
+/// [DashboardPage]
+class DashboardRoute extends PageRouteInfo<void> {
+  const DashboardRoute({List<PageRouteInfo>? children})
       : super(
-          LoginRoute.name,
-          path: 'login',
+          DashboardRoute.name,
+          initialChildren: children,
         );
 
-  static const String name = 'LoginRoute';
+  static const String name = 'DashboardRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -141,82 +86,94 @@ class HomeRoute extends PageRouteInfo<void> {
   const HomeRoute({List<PageRouteInfo>? children})
       : super(
           HomeRoute.name,
-          path: '/',
           initialChildren: children,
         );
 
   static const String name = 'HomeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [LoginPage]
+class LoginRoute extends PageRouteInfo<void> {
+  const LoginRoute({List<PageRouteInfo>? children})
+      : super(
+          LoginRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'LoginRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
 /// [ControlsPage]
 class ControlsRoute extends PageRouteInfo<void> {
-  const ControlsRoute()
+  const ControlsRoute({List<PageRouteInfo>? children})
       : super(
           ControlsRoute.name,
-          path: 'controls',
-        );
-
-  static const String name = 'ControlsRoute';
-}
-
-/// generated route for
-/// [DashboardPage]
-class DashboardRoute extends PageRouteInfo<void> {
-  const DashboardRoute()
-      : super(
-          DashboardRoute.name,
-          path: 'dashboard',
-        );
-
-  static const String name = 'DashboardRoute';
-}
-
-/// generated route for
-/// [TasksPage]
-class TasksRoute extends PageRouteInfo<void> {
-  const TasksRoute()
-      : super(
-          TasksRoute.name,
-          path: 'tasks',
-        );
-
-  static const String name = 'TasksRoute';
-}
-
-/// generated route for
-/// [EmptyRouterPage]
-class EmptyRouterRoute extends PageRouteInfo<void> {
-  const EmptyRouterRoute({List<PageRouteInfo>? children})
-      : super(
-          EmptyRouterRoute.name,
-          path: 'settings',
           initialChildren: children,
         );
 
-  static const String name = 'EmptyRouterRoute';
+  static const String name = 'ControlsRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
-/// [SettingsPage]
-class SettingsRoute extends PageRouteInfo<void> {
-  const SettingsRoute()
+/// [EmptyPage]
+class EmptyRoute extends PageRouteInfo<void> {
+  const EmptyRoute({List<PageRouteInfo>? children})
       : super(
-          SettingsRoute.name,
-          path: '',
+          EmptyRoute.name,
+          initialChildren: children,
         );
 
-  static const String name = 'SettingsRoute';
+  static const String name = 'EmptyRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
 /// [ProfilePage]
 class ProfileRoute extends PageRouteInfo<void> {
-  const ProfileRoute()
+  const ProfileRoute({List<PageRouteInfo>? children})
       : super(
           ProfileRoute.name,
-          path: 'profile-page',
+          initialChildren: children,
         );
 
   static const String name = 'ProfileRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SettingsPage]
+class SettingsRoute extends PageRouteInfo<void> {
+  const SettingsRoute({List<PageRouteInfo>? children})
+      : super(
+          SettingsRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SettingsRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [TasksPage]
+class TasksRoute extends PageRouteInfo<void> {
+  const TasksRoute({List<PageRouteInfo>? children})
+      : super(
+          TasksRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'TasksRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }

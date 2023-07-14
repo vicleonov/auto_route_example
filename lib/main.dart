@@ -40,7 +40,7 @@ class _AutoRouteExampleState extends State<AutoRouteExample> {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      routerDelegate: _appRouter.delegate(initialDeepLink: deepLink),
+      routerDelegate: _appRouter.delegate(),
       routeInformationParser: _appRouter.defaultRouteParser(),
     );
   }
