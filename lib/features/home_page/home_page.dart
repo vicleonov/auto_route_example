@@ -1,8 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:auto_route_example/features/home_page/models/tab_items.dart';
+import 'package:auto_route_example/features/settings/empty_page.dart';
 import 'package:auto_route_example/utils/routing/router.dart';
 import 'package:flutter/material.dart';
 
+@RoutePage()
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -13,7 +15,7 @@ class HomePage extends StatelessWidget {
       routes: const [
         DashboardRoute(),
         TasksRoute(),
-        EmptyRouterRoute(),
+        EmptyRoute(),
       ],
       bottomNavigationBuilder: (_, tabsRouter) {
         return BottomNavigationBar(
